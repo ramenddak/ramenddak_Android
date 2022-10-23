@@ -1,4 +1,4 @@
-package com.app.ramenddak.ui
+package com.app.ramenddak.ui.component
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
