@@ -76,6 +76,7 @@
             app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_main"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@drawable/go_select_ramen_bg"
