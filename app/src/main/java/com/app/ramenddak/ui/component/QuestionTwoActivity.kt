@@ -49,7 +49,7 @@ class QuestionTwoActivity :
                     resultIntent.putExtra("ramen", arrayOf("신라면", "진라면 매운맛", "진짬뽕", "열라면"))
                     startActivity(resultIntent)
                 } else {
-                    resultIntent.putExtra("ramen", arrayOf("콕콕콕 라면볶이", "크림진짬뽕, 간짬뽕", "사천짜파게티"))
+                    resultIntent.putExtra("ramen", arrayOf("콕콕콕 라면볶이", "크림진짬뽕", "간짬뽕", "사천짜파게티"))
                     startActivity(resultIntent)
                 }
             }
