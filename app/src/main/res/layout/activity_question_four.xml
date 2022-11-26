@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFE380"
+        tools:context=".ui.component.QuestionOneActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="252dp"
+            android:layout_height="385dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/question_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/question"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="혹시 국물 필요해?"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/yes_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yes_btn_bg"
+                android:text="뜨끈한 국물..\n좋은데?"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/no_btn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/no_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/no_btn_bg"
+                android:text="국물은 딱히..\n별론데?"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yes_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="현승"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="178dp"
+            android:layout_height="300dp"
+            android:src="@drawable/question_four_hyunseung"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

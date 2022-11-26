@@ -9,6 +9,7 @@ object Versions {
         const val CORE_KTX = "1.7.0"
         const val APPCOMPAT = "1.4.1"
         const val CONSTRAINT_LAYOUT = "2.1.3"
+        const val ACTIVITY_KTX = "1.2.3"
     }
 
     object Google {
