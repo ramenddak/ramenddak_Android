@@ -27,96 +27,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="여기서 골라봐!"
+                android:text="이건 어때?"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/ramen_img"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/ic_launcher" />
 
-                <ImageView
-                    android:id="@+id/item1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintEnd_toStartOf="@id/item2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/ramen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="라면 이름"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/item2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintEnd_toStartOf="@id/item3"
-                    app:layout_constraintStart_toEndOf="@+id/item1"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/item3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintEnd_toStartOf="@id/item4"
-                    app:layout_constraintStart_toEndOf="@+id/item2"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/item4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/item3"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/item5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/item2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/item1" />
-
-                <ImageView
-                    android:id="@+id/item6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/item3"
-                    app:layout_constraintStart_toEndOf="@+id/item1"
-                    app:layout_constraintTop_toBottomOf="@id/item2" />
-
-                <ImageView
-                    android:id="@+id/item7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/item4"
-                    app:layout_constraintStart_toEndOf="@+id/item2"
-                    app:layout_constraintTop_toBottomOf="@id/item3" />
-
-                <ImageView
-                    android:id="@+id/item8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/item3"
-                    app:layout_constraintTop_toBottomOf="@id/item4" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
-
+        <ImageView
+            android:layout_width="299dp"
+            android:layout_height="392dp"
+            android:src="@drawable/result_hyunseung"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
