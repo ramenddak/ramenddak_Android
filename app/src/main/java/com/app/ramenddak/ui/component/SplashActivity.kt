@@ -19,7 +19,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
     }
 
     private fun showMain() {
-        binding.startBtn.setOnClickListener {
+        binding.screen.setOnClickListener {
             startActivity(Intent(this, StartActivity::class.java))
         }
     }
