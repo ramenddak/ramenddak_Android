@@ -8,14 +8,19 @@ import com.app.ramenddak.network.GptRetrofitBuilder
 import com.app.ramenddak.network.dto.ChatDto
 import com.app.ramenddak.network.dto.ChatGptRequest
 import com.app.ramenddak.network.dto.ChatGptResponse
+import com.app.ramenddak.ui.base.LottieDialog
 import com.example.presentation.base.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_result) {
-    private val keyWords = listOf("따뜻한", "고소한", "국물")
+    private val keyWords = listOf("차가운", "새콤한", "쫄깃한")
+    private val dialog = LottieDialog()
+
     override fun init() {
+        window.statusBarColor = getColor(R.color.white)
+        dialog.show(supportFragmentManager, "loading_lottie")
         getGptAns()
     }
 
@@ -26,7 +31,7 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
                 messages = listOf(
                     ChatDto(
                         role = "user",
-                        content = keyWords.toString() + "라면 한가지만 추천해줘"
+                        content = keyWords.toString() + "시중에 파는 라면 한가지만 추천해줘 이유와 함께 30글자로 자연스럽게 설명해줘"
                     )
                 )
             )
@@ -35,19 +40,21 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
                 call: Call<ChatGptResponse>,
                 response: Response<ChatGptResponse>
             ) {
-                Log.d("GPT Ans", response.body().toString())
+                Log.d("GPT Ans", response.code().toString())
                 setAnswerOnUi(response.body()!!.choices[0].message.content)
+                dialog.dismiss()
             }
 
             override fun onFailure(call: Call<ChatGptResponse>, t: Throwable) {
                 Log.d("GPT", t.toString())
                 Toast.makeText(this@ResultActivity, "라면 추천을 실패했습니다...", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
             }
 
         })
     }
 
     private fun setAnswerOnUi(ans: String) {
-        binding.ramenName.text = ans
+        binding.ramenExplanation.text = ans
     }
 }
