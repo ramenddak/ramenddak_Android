@@ -6,6 +6,7 @@ import com.app.ramenddak.databinding.ActivityMainBinding
 import com.example.presentation.base.BaseActivity
 
 class QuestionOneActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+    private var keyWords = intent.getStringExtra("keyWords").toString()
     override fun init() {
         onClick()
     }
@@ -14,13 +15,18 @@ class QuestionOneActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_
         val intent = Intent(this, QuestionTwoActivity::class.java)
         with(binding) {
             yesBtn.setOnClickListener {
-                intent.putExtra("question-ONE", "YES")
-                startActivity(intent)
+                startActitivty("국물이 있는")
             }
             noBtn.setOnClickListener {
-                intent.putExtra("question-ONE", "NO")
-                startActivity(intent)
+                startActitivty("국물이 없는")
             }
         }
+    }
+
+    private fun startActitivty(word: String) {
+        val intent = Intent(this, QuestionThreeActivity::class.java)
+
+        intent.putExtra("keyWords", "$keyWords $word")
+        startActivity(intent)
     }
 }
