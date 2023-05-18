@@ -7,9 +7,10 @@ import com.example.presentation.base.BaseActivity
 
 class QuestionTwoActivity :
     BaseActivity<ActivityQuestionTwoBinding>(R.layout.activity_question_two) {
-    private var keyWords = intent.getStringExtra("keyWords").toString()
+    private lateinit var keyWords: String
 
     override fun init() {
+        keyWords = intent.getStringExtra("keyWords").toString()
         onClick()
     }
 

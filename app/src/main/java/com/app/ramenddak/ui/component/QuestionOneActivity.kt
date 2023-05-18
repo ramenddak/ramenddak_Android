@@ -6,7 +6,6 @@ import com.app.ramenddak.databinding.ActivityMainBinding
 import com.example.presentation.base.BaseActivity
 
 class QuestionOneActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
-    private var keyWords = intent.getStringExtra("keyWords").toString()
     override fun init() {
         onClick()
     }
@@ -26,7 +25,7 @@ class QuestionOneActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_
     private fun startActitivty(word: String) {
         val intent = Intent(this, QuestionThreeActivity::class.java)
 
-        intent.putExtra("keyWords", "$keyWords $word")
+        intent.putExtra("keyWords", word)
         startActivity(intent)
     }
 }

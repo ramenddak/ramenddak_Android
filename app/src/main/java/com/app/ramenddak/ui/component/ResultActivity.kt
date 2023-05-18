@@ -1,5 +1,7 @@
 package com.app.ramenddak.ui.component
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
 import android.util.Log
 import android.widget.Toast
 import com.app.ramenddak.R
@@ -15,13 +17,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_result) {
-    private val keyWords = listOf("차가운", "새콤한", "쫄깃한")
+    private lateinit var keyWords: String
     private val dialog = LottieDialog()
 
     override fun init() {
         window.statusBarColor = getColor(R.color.white)
         dialog.show(supportFragmentManager, "loading_lottie")
+        keyWords = intent.getStringExtra("keyWords").toString()
         getGptAns()
+        goMainBtnOnClick()
     }
 
     private fun getGptAns() {
@@ -31,7 +35,7 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
                 messages = listOf(
                     ChatDto(
                         role = "user",
-                        content = keyWords.toString() + "시중에 파는 라면 한가지만 추천해줘 이유와 함께 30글자로 자연스럽게 설명해줘"
+                        content = keyWords + "시중에 파는 라면 한가지만 추천해줘 이유와 함께 30글자로 자연스럽게 설명해줘"
                     )
                 )
             )
@@ -56,5 +60,13 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
 
     private fun setAnswerOnUi(ans: String) {
         binding.ramenExplanation.text = ans
+    }
+
+    private fun goMainBtnOnClick() {
+        binding.goMainBtn.setOnClickListener {
+            val intent = Intent(this, StartActivity::class.java)
+            intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
     }
 }
