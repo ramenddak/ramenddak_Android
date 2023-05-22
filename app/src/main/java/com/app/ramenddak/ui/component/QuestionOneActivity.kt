@@ -23,7 +23,7 @@ class QuestionOneActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_
     }
 
     private fun startActitivty(word: String) {
-        val intent = Intent(this, QuestionThreeActivity::class.java)
+        val intent = Intent(this, QuestionTwoActivity::class.java)
 
         intent.putExtra("keyWords", word)
         startActivity(intent)

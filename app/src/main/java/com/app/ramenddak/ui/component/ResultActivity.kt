@@ -24,6 +24,7 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
         window.statusBarColor = getColor(R.color.white)
         dialog.show(supportFragmentManager, "loading_lottie")
         keyWords = intent.getStringExtra("keyWords").toString()
+        Log.d("keyword",keyWords)
         getGptAns()
         goMainBtnOnClick()
     }
